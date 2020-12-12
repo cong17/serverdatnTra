@@ -16,7 +16,7 @@ const corsHeader = (req, res, next) => {
     next();
   }
 };
-app.use(corsHeader);
+// app.use(corsHeader);
 
 
 const job = new cron.CronJob({
