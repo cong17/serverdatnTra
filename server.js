@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 8080;
 const cron = require('cron');
 const { getDataCovid, getDataNews } = require("./crawlerCovid");
 const fs = require('fs');
@@ -20,7 +20,7 @@ app.use(corsHeader);
 
 
 const job = new cron.CronJob({
-  cronTime: '0 */01 * * * *', // Chạy Jobs vào moi 5p
+  cronTime: '0 0 */12 * * *', // Chạy Jobs vào moi 5p
   onTick: function () {
     getDataCovid();
     getDataNews();
