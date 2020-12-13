@@ -121,10 +121,11 @@ let getDataNews = () => {
                     let text = $(this).find("header").text().trim();
                     if (text) {
                         let linkbaiviet = $(this).find("header a").attr("href");
-                        let imgbaiviet = $(this).find("span.imgFlt.imgNws > a > img").attr("src");
+                        let imgbaiviet = $(this).find("span.imgFlt.imgNws > a > img").data("original");
                         let contentbaiviet = $(this).find("span.nwsSp ").text().trim();
                         let timebaiviet = $(this).find("span.nwsTit > .dated ").text().trim();
                         let obj = {
+                            "titlebaiviet": text,
                             "linkbaiviet": linkbaiviet,
                             "imgbaiviet": imgbaiviet,
                             "contentbaiviet": contentbaiviet,
