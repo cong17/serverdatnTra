@@ -20,7 +20,7 @@ const corsHeader = (req, res, next) => {
 
 
 const job = new cron.CronJob({
-  cronTime: '*/2 * * * *', // Chạy Jobs vào moi 5p
+  cronTime: '*/5 * * * *', // Chạy Jobs vào moi 5p
   onTick: function () {
     getDataCovid();
     getDataNews();
